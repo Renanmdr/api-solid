@@ -4,7 +4,7 @@ import { compare } from 'bcryptjs';
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
 import { UserAlreadyExistsErro } from './errors/user-already-exists-error';
 
-describe('check if it works', () => {
+describe('register use case', () => {
 
   it('should be able to register', async () => {
     const inMemoryUsersRepository = new InMemoryUsersRepository();
@@ -44,7 +44,7 @@ describe('check if it works', () => {
       password: '123456'
     });
 
-    expect(() => registerUserCase.execute({
+    await expect(() => registerUserCase.execute({
       name: 'Michael Jr',
       email: 'michael@exemplo.com',
       password: '123456'
