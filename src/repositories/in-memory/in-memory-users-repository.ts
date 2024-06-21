@@ -5,7 +5,7 @@ import { IUsersRepository } from '../I-users-repository';
 export class InMemoryUsersRepository implements IUsersRepository{
   
 
-  private items: User[] = [];
+  public items: User[] = [];
 
   async findById(id: string) {
     const user = this.items.find((item) => item.id === id);
