@@ -89,4 +89,25 @@ describe('Check In use case', () => {
 
   });
 
+  it('should not be able to check in on distant gym', async () => {
+
+    gymsRepository.items.push({
+      id: 'gym-02',
+      tittle: 'Gym Node',
+      description: '',
+      phone: '',
+      latitude: new Decimal(-27.0747279),
+      longitude: new Decimal(-49.4889672),
+    });
+
+    await expect(() => sut.execute({
+      gymId: 'gym-02',
+      userId: '123',
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
+    })).rejects.toBeInstanceOf(Error);
+
+
+  });
+
 });
