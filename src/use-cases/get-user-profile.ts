@@ -10,7 +10,7 @@ interface IGetUserProfileUserCaseResponse {
     user: User
 }
 
-export class GetUserProfileUserCase {
+export class GetUserProfileUseCase {
   constructor(private usersRepository: IUsersRepository) {
 
   }

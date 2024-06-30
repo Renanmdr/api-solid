@@ -10,7 +10,7 @@ interface SearchGymsUseCaseResponse {
     gyms: Gym[]
 }
 
-export class SearchGymsseCase {
+export class SearchGymsUseCase {
 
   constructor(private gymsRepository: IGymsRepository) { }
 
